@@ -1,0 +1,120 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "f5f881126758c107a6e73235645a29b1",
+    "entities": [
+      {
+        "tableName": "Student",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`studentID` INTEGER PRIMARY KEY AUTOINCREMENT, `emp_id` INTEGER, `s_name` TEXT, `s_type` TEXT, `city` TEXT, `post_code` INTEGER, FOREIGN KEY(`emp_id`) REFERENCES `Teacher`(`t_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "studentID",
+            "columnName": "studentID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempId",
+            "columnName": "emp_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "studentName",
+            "columnName": "s_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "studentType",
+            "columnName": "s_type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "address.city",
+            "columnName": "city",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "address.postCode",
+            "columnName": "post_code",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "studentID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Teacher",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "emp_id"
+            ],
+            "referencedColumns": [
+              "t_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Teacher",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`t_id` INTEGER PRIMARY KEY AUTOINCREMENT, `t_name` TEXT, `t_year` TEXT, `subject` TEXT, `sList1` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "teacherId",
+            "columnName": "t_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "teacherName",
+            "columnName": "t_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "teacherYear",
+            "columnName": "t_year",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subject",
+            "columnName": "subject",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sList1",
+            "columnName": "sList1",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "t_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f5f881126758c107a6e73235645a29b1')"
+    ]
+  }
+}

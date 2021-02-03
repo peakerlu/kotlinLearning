@@ -1,0 +1,116 @@
+<div class="page bg-white" data-page="outgoodsDetail">
+    <div class='page-content' style="background: #f6f8fb;">
+        <div class="detail-title">
+            <div class="content-top">
+                <div class="area-head">
+                    <p><i onclick="goBack()"></i><span>出库物资</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-content" style="background:#fff;overflow-y: auto;">
+            <div class="form-list " style="height:100%;padding-bottom:.4rem">
+                <input id="goodId" data-taskId="" data-taskDefKey=""  style="display:none" value=""/>
+                <div class="form-item baseFormItem">
+                    <div class="item-label">出库时间</div>
+                    <div class="item-value"><input id="planOutTime" placeholder="" type="date" value=""/>
+                    </div>
+                </div>
+                <div class="form-item baseFormItem">
+                    <div class="item-label">归还时间</div>
+                    <div class="item-value"><input id="returnTime" placeholder="" type="date" value=""/>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">入库类型</div>
+                    <div class="item-value">
+                        <select id="outType" onchange="">
+                            <option value="0">固定物资</option>
+                            <option value="1">暂扣物资</option>
+                            <option value="2">罚没物资</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="form_title goodDestory" style="display:none">物资销毁</p>
+                <div class="form-row goodDestory" style="display:none">
+                    <div class="photo-item"></div>
+                    <div class="photos-item">
+                        <p>销毁凭证</p>
+                        <div class="photos-box">
+                            <div class="photo-item">
+                                <img src="../images/head-portrait.png">
+                            </div>
+                            <div class="photo-item">
+                                <p><span></span></p>
+                                <p>上传图片</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="form_title goodPunishment" style="display:none">处罚情况</p>
+                <div class="form-row goodPunishment" style="display:none">
+                    <div class="photo-item"></div>
+                    <div class="photos-item">
+                        <p>处罚单</p>
+                        <div class="photos-box">
+                            <div class="photo-item">
+                                <img src="../images/head-portrait.png">
+                            </div>
+                            <div class="photo-item">
+                                <p><span></span></p>
+                                <p>上传图片</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-item goodPunishment" style="display:none">
+                    <div class="item-label">接收处罚人员</div>
+                    <div class="item-value"><input id="contact" placeholder="请输入接收处罚人员" type="text" value=""/>
+                    </div>
+                </div>
+                <div class="form-item goodPunishment" style="display:none">
+                    <div class="item-label">联系方式</div>
+                    <div class="item-value"><input id="phone" placeholder="请输入联系方式" type="text" value=""/>
+                    </div>
+                </div>
+                <div class="form-item goodPunishment" style="display:none">
+                    <div class="item-label">处罚金额</div>
+                    <div class="item-value"><input id="money" placeholder="请输入处罚金额" type="number" value=""/>
+                    </div>
+                </div>
+                <p class="form_title">出库物资情况</p>
+                <div class="btn-bottom">
+                    <div id="selectOldGood" class="btn-primary" onclick="selectGoods()">新增物资</div>
+                </div>
+                <div class="add-goodslist" style="height:auto">
+
+                </div>
+                <div class="btn-bottom">
+                    <div id="outformSave" class="btn-primary" onclick="outSave()">保存</div>
+                    <div id="outformIn" style="display:none;margin-left: .1rem" class="btn-primary" onclick="outAppear()">上报</div>
+                    <div id="outformPunish" style="display:none" class="btn-warn" onclick="outPunish()">处罚</div>
+                    <div id="outformApply" style="display:none"  class="btn-primary" onclick="outApply()">申领</div>
+                    <div id="outformApprove" style="display:none"  class="btn-primary" onclick="outApprove(1)">通过</div>
+                    <div id="outformUnApprove" style="display:none;margin-left: .1rem"  class="btn-warn" onclick="outApprove(2)">不通过</div>
+                    <div id="outformDestroy" style="display:none" class="btn-warn" onclick="outDestroy()">销毁</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup-selectgoods">
+        <div class='page-content' style="background: #f6f8fb;">
+            <div class="detail-title">
+                <div class="content-top">
+                    <div class="area-head">
+                        <p><i onclick="closeSelectgoods()"></i><span>已有物资选择</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="select-good-list form-list">
+
+            </div>
+            <div class="btn-bottom">
+                <div class="btn-primary" onclick="statisticsGoods()">确定</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+<div class="page bg-white" data-page="assigned">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <span onclick="goToTabItem(1)" >巡查考核</span>
+        <span onclick="goToTabItem(2)" class="active">交办任务</span>
+        <span onclick="goToTabItem(3)">路域巡查</span>
+        <span onclick="goToTabItem(4)">畜禽养殖</span>
+        <span class="right-last" onclick="showRightPanel();"><img style="width:.2rem"
+            src="../images/black-line3.png" alt=""></span>
+      </div>
+    </div>
+    <div class='page-content home-page-content' style="background: #f6f8fb;">
+        <div class="assigned-task">
+            <div class="content-top" style="height: 1.5rem">
+                <!-- <div class="area-head">
+                    <p><i onclick="goBack()"></i><span>交办任务</span></p>
+                </div> -->
+                <div class="searche-box">
+                    <i class="search-ico"></i>
+                    <input class="search" type="text" placeholder="请输入关键字进行查询">
+                </div>
+                <div class="content-tab" id="assigned-tab" style="height:0;">
+                    <!--<ul>-->
+                        <!--<li><span>未执行</span></li>-->
+                        <!--<li><span>已执行</span></li>-->
+                    <!--</ul>-->
+                </div>
+                <div class="content-tit">
+                    <p>违法类型</p>
+                    <div class="select-box">
+                        <div class="r-content swiper-container  swiper-container1">
+                            <div class="swiper-wrapper">
+                                <span class="swiper-slide" data-href="111"><span>非法船舶</span></span>
+                                <span class="swiper-slide" data-href="222"><span>非法垂钓</span></span>
+                                <span class="swiper-slide" data-href="333"><span>非法捕捞</span></span>
+                                <span class="swiper-slide" data-href="444"><span>非法游泳</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-bottom">
+                <div class="content-list">
+                    <div class="content-item" onclick="goAssignedDetail()">
+                        <img src="../images/no_shuju.png" alt="">
+                        <div class="item-right noim">
+                            <span class="tit">电话举报</span><span class="type">非法船舶</span>
+                            <span class="sub">滨海污水处理厂永安河排放口</span>
+                            <span class="time">2020-05-19</span>
+                        </div>
+                    </div>
+                    <div class="content-item" onclick="goAssignedDetail()">
+                        <img src="../images/no_shuju.png" alt="">
+                        <div class="item-right im">
+                            <span class="tit">电话举报</span><span class="type">非法船舶</span>
+                            <span class="sub">发现非法船舶</span>
+                            <span class="time">2020-03-11</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧伸缩栏 -->
+    <div class="right-panel none" onclick="hideRightPanel()">
+    </div>
+    
+    <div class="popover carshipover">
+        <div class="popover-angle"></div>
+        <div class="carship-over-inner">
+            用车申请
+        </div>
+        <div class="carship-over-inner">
+            用船申请
+        </div>
+    </div>
+
+
+        <div class="panel-content">
+          <div class="panel-head">
+            <img src="../images/head-portrait.png" style="width:.6rem">
+            <div class="person-info">
+              <p class="ellipsis"><strong class="userName"></strong></p>
+              <p class="ellipsis department"></p>
+            </div>
+          </div>
+          <i class="back-right" onclick="hideRightPanel()"></i>
+          <div class="panel-list">
+            <ul>
+              <li onclick="goCarShipApply()">
+                <i class="r-ico1"></i>
+                <p><strong>车船单申请</strong></p>
+                <p><span>申请用车用船的功能</span></p>
+              </li>
+              <li onclick="goAssessPage()">
+                <i class="r-ico1"></i>
+                <p><strong>考核办法</strong></p>
+                <p><span>对人员进行考核评分</span></p>
+              </li>
+              <li onclick="goWithholdMaterial()">
+                <i class="r-ico1"></i>
+                <p><strong>物资出入库管理</strong></p>
+                <p><span>对物资的出库进行管理</span></p>
+              </li>
+              <li onclick="goAttendance()">
+                <i class="r-ico2"></i>
+                <p><strong>考勤签到管理</strong></p>
+                <p><span>对您的考勤签到进行管理</span></p>
+              </li>
+              <li onclick="goToBlackList()">
+                <i class="r-ico3"></i>
+                <p><strong>黑名单管理</strong></p>
+                <p><span>对黑名单用户进行管理</span></p>
+              </li>
+              <!--<li onclick="goPatrolBase()">-->
+                <!--<i class="r-ico4"></i>-->
+                <!--<p><strong>巡查案例库</strong></p>-->
+                <!--<p><span>查询已巡查过的案例库</span></p>-->
+              <!--</li>-->
+              <li onclick="goLawRule()">
+                <i class="r-ico5"></i>
+                <p><strong>法律法规查询</strong></p>
+                <p><span>查看相应的法律法规</span></p>
+              </li>
+              <li onclick="goEmergency()">
+                <i class="r-ico6"></i>
+                <p><strong>应急通知</strong></p>
+                <p><span>查看相应的应急通知</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+  </div>

@@ -1,0 +1,155 @@
+<div class="page bg-white" data-page="goodsDetail">
+    <div class='page-content' style="background: #f6f8fb;">
+        <div class="detail-title">
+            <div class="content-top">
+                <div class="area-head">
+                    <p><i onclick="goBack()"></i><span>入库物资</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-content" style="background:#fff;overflow-y: auto;">
+            <div class="form-list" style="height:100%;padding-bottom:.4rem">
+                <input id="goodId" data-taskId="" data-taskDefKey=""  style="display:none" value=""/>
+                <div class="form-item">
+                    <div class="item-label">入库时间</div>
+                    <div class="item-value"><input id="storageTime" placeholder="请选择暂扣日期" type="date" value=""/>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">入库类型</div>
+                    <div class="item-value">
+                        <select id="Intype" onchange="inTypeChange()">
+                            <option value="0">固定物资</option>
+                            <option value="1">暂扣物资</option>
+                            <option value="2">罚没物资</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item waterType" style="display:none">
+                    <div class="item-label">水源地类型</div>
+                    <div class="item-value">
+                        <select id="waterType" onchange="waterTypeChange()">
+                            <option value="1">一级水源地</option>
+                            <option value="2">二级水源地</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item expirationTime" style="display:none">
+                    <div class="item-label">到期领取时间</div>
+                    <div class="item-value"><input id="expirationTime" placeholder="请选择领取日期" type="date" value=""/>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">仓库</div>
+                    <div class="item-value">
+                        <select id="depotId">
+
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="form-row">-->
+                <!--<div class="photo-item"></div>-->
+                <!--<div class="photos-item">-->
+                <!--<p>暂扣原因</p>-->
+                <!--<div class="photos-box">-->
+                <!--<div class="photo-item">-->
+                <!--<img src="../images/head-portrait.png">-->
+                <!--</div>-->
+                <!--<div class="photo-item">-->
+                <!--<p><span></span></p>-->
+                <!--<p>上传图片</p>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="form-item">
+                    <div class="item-label">详细信息</div>
+                    <div class="item-value"><input id="details" placeholder="请输入详细信息" type="text" value=""/>
+                    </div>
+                </div>
+                <div class="btn-bottom">
+                    <div id="addNewBtn" class="btn-primary" onclick="addNewGoods()">新增物资</div>
+                    <div id="selectOldGood" style="display:none" class="btn-primary" onclick="selectGoods()">选择已有物资</div>
+                </div>
+                <div class="add-goodslist">
+                    <!--<div class="new-goodItem">-->
+                        <!--<div class="form-item">-->
+                            <!--<div class="item-label">物资名称</div>-->
+                            <!--<div class="item-value del-temp">-->
+                                <!--<input placeholder="请输入物资名称" type="text" value=""/>-->
+                                <!--<i class="del-item"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-item">-->
+                            <!--<div class="item-label">物资数量</div>-->
+                            <!--<div class="item-value">-->
+                                <!--<input placeholder="请输入物资名称" type="text" value=""/>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-row">-->
+                            <!--<div class="photo-item"></div>-->
+                            <!--<div class="photos-item">-->
+                                <!--<p>物资图片</p>-->
+                                <!--<div class="photos-box">-->
+                                    <!--<div class="photo-item">-->
+                                        <!--<img src="../images/head-portrait.png">-->
+                                    <!--</div>-->
+                                    <!--<div class="photo-item">-->
+                                        <!--<p><span></span></p>-->
+                                        <!--<p>上传图片</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="btn-bottom" style="position:absolute;bottom:0;width:100%">
+                    <div id="informSave" class="btn-primary" onclick="saveInDepart()">保存</div>
+                    <div id="informIn" style="display:none;margin-left: .1rem" class="btn-primary" onclick="storeDeport()">入库</div>
+                    <div id="informApprove" style="flex-grow:1;margin-right: .1rem;display:none" class="btn-primary" onclick="approveInDepart(0)">通过</div>
+                    <div id="informUnapprove" style="display:none"  class="btn-warn" onclick="approveInDepart(1)">不通过</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup-selectgoods">
+        <div class='page-content' style="background: #f6f8fb;">
+            <div class="detail-title">
+                <div class="content-top">
+                    <div class="area-head">
+                        <p><i onclick="closeSelectgoods()"></i><span>已有物资选择</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="select-good-list form-list">
+                <div class="select-good-item">
+                    <div class="form-item">
+                        <i class="my-checkbox"></i>
+                        <div class="item-label"> 物资名称</div>
+                        <div class="item-value"><input type="text" value="鱼竿" /></div>
+                    </div>
+                    <div class="form-item">
+                        <div class="item-label">剩余数量</div>
+                        <div class="item-value"><input readonly type="text" value="60" /></div>
+                    </div>
+                </div>
+
+                <div class="select-good-item">
+                    <div class="form-item">
+                        <i class="my-checkbox"></i>
+                        <div class="item-label"> 物资名称</div>
+                        <div class="item-value"><input type="text" value="鱼竿" /></div>
+                    </div>
+                    <div class="form-item">
+                        <div class="item-label">剩余数量</div>
+                        <div class="item-value"><input readonly type="text" value="60" /></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn-bottom">
+                <div class="btn-primary" onclick="statisticsGoods()">确定</div>
+            </div>
+        </div>
+    </div>
+</div>

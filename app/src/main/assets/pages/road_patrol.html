@@ -1,0 +1,280 @@
+<div class="page navbar-fixed" id="roadPatrol" data-page="roadPatrol">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <span onclick="goToTabItem(1)">巡查考核</span>
+      <span onclick="goToTabItem(2)">交办任务</span>
+      <span onclick="goToTabItem(3)" class="active">路域巡查</span>
+      <span onclick="goToTabItem(4)">畜禽养殖</span>
+      <span class="right-last" onclick="showRightPanel();"><img style="width:.2rem" src="../images/black-line3.png"
+          alt=""></span>
+    </div>
+  </div>
+  <div class="page-content road_patrol">
+    <div class="personal-info">
+      <div class="my-info">
+        <div class="portrait-image">
+          <img onclick="openRetainage()" src="../images/head-portrait.png" style="width:.42rem">
+        </div>
+        <div class="grey-color">
+          <p class="userName" id="userName"></p>
+          <p class="department" id="department"></p>
+        </div>
+      </div>
+      <div class="patrol-time">
+        <p><span>2019-10-31 星期三</span></p>
+        <p class="grey"><span>班次：夏令09:00-18:00</span></p>
+      </div>
+    </div>
+    <div class="patrol-list road-patrol-list">
+      <div class="calendar-area">
+        <!-- 周视图 -->
+        <div class="bd_w jcalendar_week" id="jcalendar_week"></div>
+        <div class="pop_bd" id="pop">
+          <div class="pop_con">
+            <span class="pop_close" onclick="$('#pop').hide();">&times;</span>
+            <h5>选择年份：</h5>
+            <div class="flex_i control">
+              <button onclick="$(this).next().val(parseInt($(this).next().val())-1)">
+              </button> <input class="flex_auto control_val" type="text" id="setyear" value="- -" />
+              <button onclick="$(this).prev().val(parseInt($(this).prev().val())+1)">></button>
+            </div>
+            <h5>选择周：</h5>
+            <div class="flex_i control">
+              <button onclick="$(this).next().val(parseInt($(this).next().val())-1)">
+              </button> <input class="flex_auto control_val" type="text" id="setweek" value="- -" />
+              <button onclick="$(this).prev().val(parseInt($(this).prev().val())+1)">></button>
+            </div>
+            <div class="flex_i">
+              <button class="setjc_btn nowweek_btn flex_auto" onclick="tonowweek()">本周</button>
+              <button class="setjc_btn flex_auto" onclick="jumpweek()">确定</button>
+            </div>
+          </div>
+        </div>
+        <!-- 月视图 -->
+        <div id="monthView" class="content-block monthView" style="margin:0;display: none">
+          <div style="padding: 0; margin-right: -15px; width: auto" class="content-block-inner">
+            <div id="calendar-inline-container" class="calendar-inline-container"></div>
+          </div>
+        </div>
+      </div>
+      <div class="road-patrol-content">
+        <div class="position-info">
+          <p class="position-info-title">当前定位</p>
+          <p><strong>这里是当前定位的地点</strong></p>
+          <p><span class="normal">GPS连接正常</span></p>
+        </div>
+        <div class="click-area">
+          <p>立即巡查</p>
+        </div>
+      </div>
+    </div>
+    <div class="patrol-record-box none">
+      <div class="patrol-record-tabs">
+        <span class="active">待上传</span>
+        <span>上传中</span>
+        <span>已上传</span>
+      </div>
+      <div class="patrol-record-list">
+        <div class="patrol-record-item">
+          <div class="task-header">
+            <div>路域巡查记录</div>
+            <span><i class="unfinish"></i>待上传</span>
+          </div>
+          <div class="task-content">
+            <div class="patrol-detail">
+              <p>巡查详情</p>
+              <div class="detail-data">
+                <p>起止时间：5月26日 20:00 - 5月26日 20:00</p>
+                <p><strong>珊溪水库日常巡查</strong></p>
+                <p class="arrange-line"><span>巡查人员：黄子明</span> </p>
+              </div>
+            </div>
+            <div class="patrol-lines">
+              <p>巡查详情</p>
+              <div class="line-data">
+                <p>巡查是否有异常</p>
+                <p>巡查是否有异常</p>
+              </div>
+            </div>
+            <div class="upload-btn"><span>继续上传</span></div>
+          </div>
+          <div class="task-bottom">
+            <span>查看案例图片<i class="pic"></i></span>
+            <span>查看巡查文件<i class="file"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="road-patrol-bottom">
+      <span class="active">路域巡查</span>
+      <span>巡查记录</span>
+    </div>
+  </div>
+  <!-- 右侧伸缩栏 -->
+  <div class="right-panel none" onclick="hideRightPanel()">
+  </div>
+  <div class="panel-content">
+    <div class="panel-head">
+      <img src="../images/head-portrait.png" style="width:.6rem">
+      <div class="person-info">
+        <p class="ellipsis"><strong class="userName"></strong></p>
+        <p class="ellipsis department">水行政主管部门</p>
+      </div>
+    </div>
+    <i class="back-right" onclick="hideRightPanel()"></i>
+    <div class="panel-list">
+      <ul>
+        <li onclick="goCarShipApply()">
+          <i class="r-ico1"></i>
+          <p><strong>车船单申请</strong></p>
+          <p><span>申请用车用船的功能</span></p>
+        </li>
+        <li onclick="goAssessPage()">
+          <i class="r-ico1"></i>
+          <p><strong>考核办法</strong></p>
+          <p><span>对人员进行考核评分</span></p>
+        </li>
+        <li onclick="goWithholdMaterial()">
+          <i class="r-ico1"></i>
+          <p><strong>物资出入库管理</strong></p>
+          <p><span>对物资的出库进行管理</span></p>
+        </li>
+        <li onclick="goAttendance()">
+          <i class="r-ico2"></i>
+          <p><strong>考勤签到管理</strong></p>
+          <p><span>对您的考勤签到进行管理</span></p>
+        </li>
+        <li onclick="goToBlackList()">
+          <i class="r-ico3"></i>
+          <p><strong>黑名单管理</strong></p>
+          <p><span>对黑名单用户进行管理</span></p>
+        </li>
+        <!--<li onclick="goPatrolBase()">-->
+          <!--<i class="r-ico4"></i>-->
+          <!--<p><strong>巡查案例库</strong></p>-->
+          <!--<p><span>查询已巡查过的案例库</span></p>-->
+        <!--</li>-->
+        <li onclick="goLawRule()">
+          <i class="r-ico5"></i>
+          <p><strong>法律法规查询</strong></p>
+          <p><span>查看相应的法律法规</span></p>
+        </li>
+        <li onclick="goEmergency()">
+          <i class="r-ico6"></i>
+          <p><strong>应急通知</strong></p>
+          <p><span>查看相应的应急通知</span></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 暂扣单弹出层 -->
+  <div class="popup popup-services">
+    <div class='page-content' style="background: #f6f8fb;">
+      <div class="detail-title">
+        <div class="content-top">
+          <div class="area-head">
+            <p><i onclick="closeRetainage()"></i><span>添加暂扣单</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="detail-content" style="background:#fff;overflow-y: auto;">
+        <div class="form-list" style="height:100%">
+          <div class="form-item">
+            <div class="item-label">暂扣单编号</div>
+            <div class="item-value"><input placeholder="请输入暂扣单编号" type="text" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">暂扣日期</div>
+            <div class="item-value"><input placeholder="请选择暂扣日期" type="datetime-local" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">检查地点</div>
+            <div class="item-value"><input placeholder="请输入检查地点" type="text" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">对象名称</div>
+            <div class="item-value"><input placeholder="请输入对象名称" type="text" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">身份证号码</div>
+            <div class="item-value"><input placeholder="请输入身份证号" type="text" value="" /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-item" style="width:49%;float: left;">
+              <div class="item-label">违规行为</div>
+              <div class="item-label">
+                <select>
+                  <option>罚没(抛竿)</option>
+                  <option>Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-item" style="width:49%;float: left;">
+              <div class="item-label" style="width:.6rem">数量</div>
+              <div class="item-label"><input placeholder="请输入数量" type="text" value="" /></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="photo-item"></div>
+            <div class="photos-item">
+              <p>相关照片</p>
+              <div class="photos-box">
+                <div class="photo-item">
+                  <img src="../images/head-portrait.png">
+                </div>
+                <div class="photo-item">
+                  <p><span></span></p>
+                  <p>上传图片</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">领回日期</div>
+            <div class="item-value">
+              <select>
+                <option>1个月</option>
+                <option>2个月</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">领回地点</div>
+            <div class="item-value"><input placeholder="请输入领回地点" type="text" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">联系电话</div>
+            <div class="item-value"><input placeholder="请输入领回地点" type="text" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">开单人员</div>
+            <div class="item-value"><input placeholder="请输入开单人员" type="text" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">人员编号</div>
+            <div class="item-value"><input placeholder="请输入人员编号" type="text" value="" /></div>
+          </div>
+          <div class="form-item">
+            <div class="item-label">所属单位</div>
+            <div class="item-value"><input placeholder="请输入人员编号" type="text" value="" /></div>
+          </div>
+          <div class="btn-bottom">
+            <div class="btn-grey" onclick="closeRetainage()">返回</div>
+            <div class="btn-primary" onclick="">打印暂扣单</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popover carshipover">
+    <div class="popover-angle"></div>
+    <div class="carship-over-inner">
+      用车申请
+    </div>
+    <div class="carship-over-inner">
+      用船申请
+    </div>
+  </div>
+</div>

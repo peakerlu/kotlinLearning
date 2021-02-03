@@ -1,0 +1,51 @@
+<div class="page bg-white" data-page="shipDetail">
+    <div class='page-content' style="background: #f6f8fb;">
+        <div class="detail-title">
+            <div class="content-top">
+                <div class="area-head">
+                    <p><i onclick="goBack()"></i><span class="shipDetailTitle">新增用船申请</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-content" style="background:#fff;overflow-y: auto;">
+            <div class="form-list" style="height:100%;padding-bottom:.4rem">
+                <div style="display: none" id="carship_id"></div>
+                <div class="form-item">
+                    <div class="item-label">用船事由</div>
+                    <div class="item-value"><input placeholder="请输入用车事由" type="text" value="" id="carship_context"/>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">出船地点</div>
+                    <div class="item-value"><input placeholder="请输入出车地点" type="text" value="" id="carship_startPlace"/>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">出船时间</div>
+                    <div class="item-value"><input placeholder="请选择出车时间" type="date" value="" id="carship_startTime"/>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">返回时间</div>
+                    <div class="item-value"><input placeholder="请选择返回时间" type="date" value="" id="carship_endTime"/>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">船号</div>
+                    <div class="item-value">
+                        <select id="carShipList">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">驾驶员</div>
+                    <div class="item-value"><input placeholder="请输入驾驶员" type="text" value="" id="carship_driver"/>
+                    </div>
+                </div>
+                <div class="btn-bottom" style="position:absolute;bottom:0;width:100%">
+                    <div class="btn-primary" onclick="saveCarShip()">提交申请</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>主页</title>
+  <link rel="stylesheet" href="../plugin/Framework7/css/framework7.ios.min.css" />
+  <link rel="stylesheet" href="../plugin/Framework7/css/framework7.ios.colors.min.css" />
+  <link rel="stylesheet" href="../plugin/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="../css/initialize.css">
+  <!-- <link rel="stylesheet" href="../css/app.css" /> -->
+  <link rel="stylesheet" href="../css/newApp.css" />
+  <link rel="stylesheet" href="../css/calendar.css" />
+  <link rel="stylesheet" href="../css/lsh.css" />
+</head>
+<body>
+  <div class="views">
+    <div class="view view-main view2">
+      <div class="pages">
+        <div class="page navbar-fixed" id="index">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <span class="active">首页</span>
+              <!-- <span onclick="goToTest()">交办任务</span> -->
+              <span class="right-last" onclick="showRightPanel();"><img style="width:.2rem"
+                  src="../images/black-line3.png" alt=""></span>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="personal-info">
+              <div class="my-info">
+                <div class="portrait-image">
+                  <img src="../images/head-portrait.png" style="width:.42rem">
+                </div>
+                <div class="grey-color">
+                  <p>黄子明</p>
+                  <p>水行政主管部门</p>
+                </div>
+              </div>
+              <div class="common-box">
+                <p>13</p>
+                <p>已签到</p>
+              </div>
+              <div class="common-box">
+                <p>4</p>
+                <p>未签到</p>
+              </div>
+              <div class="common-box">
+                <p>3</p>
+                <p>异常</p>
+              </div>
+            </div>
+            <div class="punch-card-info">
+              <div class="top-area grey-color clearfix">
+                <span class="punch-status-icon">今日已打卡</span>
+                <span class="right-button">打卡月历</span>
+              </div>
+              <p><strong>打卡时间：</strong><strong>08:35</strong></p>
+              <p class="adress-box"><i class="adress"></i>这里显示的地址是考勤返回的地址</p>
+            </div>
+            <div class="content-tab" id="index2-tab">
+                <ul>
+                    <li><span class="active">未审批</span></li>
+                    <li><span>已审批</span></li>
+                </ul>
+            </div>
+            <div class="patrol-list">
+              <div class="calendar-area">
+                <!-- 周视图 -->
+                <div class="bd_w jcalendar_week"  id="jcalendar_week"></div>
+                <div class="pop_bd" id="pop">
+                  <div class="pop_con">
+                    <span class="pop_close" onclick="$('#pop').hide();">&times;</span>
+                    <h5>选择年份：</h5>
+                    <div class="flex_i control">
+                      <button onclick="$(this).next().val(parseInt($(this).next().val())-1)">
+                      </button> <input class="flex_auto control_val" type="text" id="setyear" value="- -" />
+                      <button onclick="$(this).prev().val(parseInt($(this).prev().val())+1)">></button>
+                    </div>
+                    <h5>选择周：</h5>
+                    <div class="flex_i control">
+                      <button onclick="$(this).next().val(parseInt($(this).next().val())-1)">
+                      </button> <input class="flex_auto control_val" type="text" id="setweek" value="- -" />
+                      <button onclick="$(this).prev().val(parseInt($(this).prev().val())+1)">></button>
+                    </div>
+                    <div class="flex_i">
+                      <button class="setjc_btn nowweek_btn flex_auto" onclick="tonowweek()">本周</button>
+                      <button class="setjc_btn flex_auto" onclick="jumpweek()">确定</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- 月视图 -->
+                <div id="monthView" class="content-block" style="margin:0;display: none">
+                  <div style="padding: 0; margin-right: -15px; width: auto" class="content-block-inner">
+                    <div id="calendar-inline-container"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="patrolTask-list">
+                <div class="patroltask-item">
+                  <div class="task-header">
+                    <div>日常巡查任务</div>
+                    <span><i class="unfinish"></i>待完成</span>
+                  </div>
+                  <div class="task-content">
+                    <div class="patrol-detail">
+                      <p>巡查详情</p>
+                      <div class="detail-data">
+                        <p>截至时间：5月26日 18::00</p>
+                        <p><strong>珊溪水库日常巡查</strong></p>
+                        <p class="arrange-line"><span>安排人员:何宇</span><span>巡查人员：黄子明</span> </p>
+                      </div>
+                    </div>
+                    <div class="patrol-lines">
+                      <p>巡查路线一</p>
+                      <div class="line-data line-data2">
+                        <p>珊溪水库巡查点位一</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="patroltask-item">
+                  <div class="task-header">
+                    <div>电话举报任务</div>
+                    <span><i class="unfinish"></i>待完成</span>
+                  </div>
+                  <div class="task-content">
+                    <div class="patrol-detail">
+                      <p>巡查详情</p>
+                      <div class="detail-data">
+                        <p>截至时间：5月26日 18::00</p>
+                        <p><strong>珊溪水库日常巡查</strong></p>
+                        <p class="arrange-line"><span>安排人员:何宇</span><span>巡查人员：黄子明</span> </p>
+                      </div>
+                    </div>
+                    <div class="patrol-lines">
+                      <p>巡查路线一</p>
+                      <div class="line-data line-data2">
+                        <p>珊溪水库巡查点位一</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 右侧伸缩栏 -->
+          <div class="right-panel none" onclick="hideRightPanel()">
+          </div>
+          <div class="panel-content">
+            <div class="panel-head">
+              <img src="../images/head-portrait.png" style="width:.6rem">
+              <div class="person-info">
+                <p class="ellipsis"><strong>黄子明</strong></p>
+                <p class="ellipsis">水行政主管部门</p>
+              </div>
+            </div>
+            <i class="back-right" onclick="hideRightPanel()"></i>
+            <div class="panel-list">
+              <ul>
+                <!-- <li onclick="goWithholdMaterial()">
+                  <i class="r-ico1"></i>
+                  <p><strong>物资出入库管理</strong></p>
+                  <p><span>对物资的出库进行管理</span></p>
+                </li> -->
+                <li onclick="goAttendance()">
+                  <i class="r-ico2"></i>
+                  <p><strong>考勤签到管理</strong></p>
+                  <p><span>对您的考勤签到进行管理</span></p>
+                </li>
+                <li>
+                  <i class="r-ico3"></i>
+                  <p><strong>黑名单管理</strong></p>
+                  <p><span>对黑名单用户进行管理</span></p>
+                </li>
+                <li onclick="goPatrolBase()">
+                  <i class="r-ico4"></i>
+                  <p><strong>巡查案例库</strong></p>
+                  <p><span>查询已巡查过的案例库</span></p>
+                </li>
+                <li onclick="goLawRule()">
+                  <i class="r-ico5"></i>
+                  <p><strong>法律法规查询</strong></p>
+                  <p><span>查看相应的法律法规</span></p>
+                </li>
+                <li onclick="goEmergency()">
+                  <i class="r-ico6"></i>
+                  <p><strong>应急通知</strong></p>
+                  <p><span>查看相应的应急通知</span></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./../js/common.js"></script>
+<script src="./../js/jquery-1.11.3.js"></script>
+<script src="./../plugin/Framework7/js/framework7.js"></script>
+<!-- <script src="./../assets/plugin/Framework7/js/toast.js"></script> -->
+<script src="../js/calendar.js"></script>
+<script src="../js/my-app.js"></script>
+<script src="../js/pageInit.js"></script>
+<script src="../plugin/swiper/js/swiper.min.js"></script>
+<script>
+  $('.popover-daydata').css('display', 'none');
+</script>
+</html>

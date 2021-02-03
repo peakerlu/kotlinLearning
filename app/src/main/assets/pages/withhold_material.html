@@ -1,0 +1,58 @@
+<div class="page bg-white" data-page="withhold_material">
+        <div class='page-content' style="background: #f6f8fb;">
+            <div class="withhold_material">
+                <div class="content-top">
+                    <div class="area-head">
+                        <p><i class="left" onclick="goBack()"></i><span>出入库管理</span><i class="right goodsOpen" onclick="showBottomMaterial();"></i></p>
+                    </div>
+                    <div class="searche-box">
+                        <i class="search-ico"></i>
+                        <input class="search" type="text" placeholder="请输入关键字进行查询">
+                    </div>
+                    <div class="content-tab">
+                        <ul id="inOutManage">
+                            <li><span class="inManage active">入库管理</span></li>
+                            <li><span class="outManage">出库管理</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-bottom" >
+                    <div class="content-list" id="goodsList">
+                        <!--<div class="content-item" onclick="goInDepartForm()">-->
+                            <!--<div class="top">-->
+                                <!--<img src="../images/no_shuju.png" alt="">-->
+                                <!--<div class="item-left">-->
+                                    <!--<span class="tit">鱼竿,测试新增物资,测试物资</span>-->
+                                    <!--<span class="sub">物资类型:暂扣物资</span>-->
+                                    <!--<span class="sub">入库时间: 2020-05-13</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="bottom">-->
+                                <!--<span class="left">剩余<span>7</span>天</span>-->
+                                <!--<i class="right"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <!-- 右侧伸缩栏 -->
+                <!--<div class="right-material none" onclick="hideBottomMaterial()"></div>-->
+                <!--<div id="material_div">-->
+                    <!--<p>添加</p>-->
+                    <!--<div class="item"><i class="ico1"></i><span>暂扣单</span></div>-->
+                    <!--<div class="item"><i class="ico2"></i><span>出入库物资</span></div>-->
+                    <!--<div class="cancel">取消</div>-->
+                <!--</div>-->
+            </div>
+
+            <div class="popover goodsInpover">
+                <div class="popover-angle"></div>
+                <div class="carship-over-inner" onclick="goInDeport('newGoods')">
+                    新物资入库
+                </div>
+                <div class="carship-over-inner" onclick="goInDeport('oldGoods')">
+                    已有物资入库
+                </div>
+            </div>
+
+        </div>
+      </div>

@@ -1,0 +1,82 @@
+<div class="page bg-white" data-page="attendance">
+    <div class='page-content' style="background: #f8f9fb;">
+        <div class="attendance">
+            <div class="content-top">
+                <div class="area-head">
+                    <p><i onclick="goBack('attendance')"></i><span>考勤签到</span></p>
+                </div>
+                <div class="person-info">
+                    <div class="my-info">
+                        <div class="portrait-image">
+                        <img src="../images/head-portrait.png" style="width:.42rem">
+                        </div>
+                        <div class="grey-color">
+                            <p>黄子明</p>
+                            <p class="p-mt">水行政主管部门</p>
+                        </div>
+                    </div>
+                   <div class="time-info">
+                       <p><span>2020-03-04 星期三</span></p>
+                       <p class="p-mt">班次：夏令<span>09:00-18:00</span></p>
+                   </div>
+                </div>
+                
+            </div>
+            <div class="content-bottom">
+                <div class="calendar-area">
+                    <!-- 周视图 -->
+                    <div class="bd_w jcalendar_week"  id="jcalendar_week1"></div>
+                    <div class="pop_bd" id="pop1">
+                        <div class="pop_con">
+                        <span class="pop_close" onclick="$('#pop').hide();">&times;</span>
+                        <h5>选择年份：</h5>
+                        <div class="flex_i control">
+                            <button onclick="$(this).next().val(parseInt($(this).next().val())-1)">
+                            </button> <input class="flex_auto control_val" type="text" id="setyear1" value="- -" />
+                            <button onclick="$(this).prev().val(parseInt($(this).prev().val())+1)">></button>
+                        </div>
+                        <h5>选择周：</h5>
+                        <div class="flex_i control">
+                            <button onclick="$(this).next().val(parseInt($(this).next().val())-1)">
+                            </button> <input class="flex_auto control_val" type="text" id="setweek1" value="- -" />
+                            <button onclick="$(this).prev().val(parseInt($(this).prev().val())+1)">></button>
+                        </div>
+                        <div class="flex_i">
+                            <button class="setjc_btn nowweek_btn flex_auto" onclick="tonowweek()">本周</button>
+                            <button class="setjc_btn flex_auto" onclick="jumpweek()">确定</button>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- 月视图 -->
+                    <div id="monthView1" class="content-block monthView" style="margin:0;display: none;">
+                        <div style="padding: 0; margin-right: -15px; width: auto" class="content-block-inner">
+                        <div class="calendar-inline-container1" id="calendar-inline-container1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="count"><i></i>今日已打卡<span>0</span>次</div>
+                <div class="action"><p><i></i>上班时间<span>9:00</span></p></div>
+                <div class="status startInfo" style="display:none;">
+                    <p class="tit"><i></i>今日已打卡</p>
+                    <p class="sub">打卡时间:<span>08:22</span></p>
+                    <p class="add"><i></i>打卡成功的地址</p>
+                    <span class="normal">正常</span>
+                </div>
+                <div class="action endAction">
+                    <p><i></i>下班时间<span>18:00</span></p>
+                    <div class="status endInfo" style="display:none;">
+                        <p class="tit"><i></i>今日已打卡</p>
+                        <p class="sub">打卡时间:<span>08:22</span></p>
+                        <p class="add"><i></i>打卡成功的地址</p>
+                        <span class="normal">正常</span>
+                    </div>
+                    <div class="click" onclick="punch()">
+                        <p>上班打卡</p>
+                        <p id="attendTime" class="time">18:06</p>
+                    </div>
+                    <p class="range">这里显示的是考勤范围内的地址</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

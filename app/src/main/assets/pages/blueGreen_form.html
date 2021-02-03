@@ -1,0 +1,64 @@
+<div class="page bg-white" data-page="blueGreenForm">
+    <div class='page-content' style="background: #f6f8fb;">
+        <div class="detail-title">
+            <div class="content-top">
+                <div class="area-head">
+                    <p><i onclick="goBack()"></i><span class="blueGreenFormTitle">新增蓝藻预警</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-content" style="background:#fff;overflow-y: auto;">
+            <div class="form-list" style="height:100%;padding-bottom:.4rem">
+                <div style="display: none" id="blueGreen_id"></div>
+                <div class="form-item">
+                    <div class="item-label">当前状态</div>
+                    <div class="item-value">
+                        <select id="blueGreen_state">
+                            <option value="1">异常</option>
+                            <option value="0">无异常</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">所属县/市</div>
+                    <div class="item-value">
+                        <select id="blueGreen_cityCode"  onchange="blueGreenCityChange(this.value)">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">所在区域</div>
+                    <div class="item-value">
+                        <select id="blueGreen_areaCode">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="item-label">备注</div>
+                    <div class="item-value"><input type="text" placeholder="请填写备注" value="" id="blueGreen_remark"/>
+                    </div>
+                </div>
+                <div class="form-row blueGreen_upload_wrap">
+                    <div class="photo-item"></div>
+                    <div class="photos-item">
+                        <p>上传图片</p>
+                        <div class="photos-box">
+                            <div class="photo-item">
+                                <img src="../images/head-portrait.png">
+                            </div>
+                            <div class="photo-item">
+                                <p><span></span></p>
+                                <p>上传图片</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-bottom" style="position:absolute;bottom:0;width:100%">
+                    <div class="btn-primary" onclick="saveBlueGreen()">保存</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

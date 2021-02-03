@@ -1,0 +1,52 @@
+<div class="page bg-white" data-page="taskDetail">
+    <div class='page-content' style="background: #f6f8fb;">
+        <div class="detail-title">
+            <div class="content-top">
+                <div class="area-head">
+                    <p><i onclick="goBack('taskDetail')"></i><span>任务详情</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-content">
+            <div class="info-area">
+                <div class="detail-item">
+                    <input value="" id="taskId" style="display:none">
+                    <input value="" id="workType" style="display:none">
+                    <strong class="label-name">名称</strong>
+                    <span data-routeIds="" class="label-value" id="taskName">水域巡查</span>
+                </div>
+                <div class="detail-item">
+                    <strong class="label-name">检查时间</strong>
+                    <span class="label-value" id="taskStartTime"></span>
+                </div>
+                <div class="detail-item">
+                    <strong class="label-name">检查类型</strong>
+                    <span class="label-value" id="workTypeVal"></span>
+                </div>
+                <div class="detail-item">
+                    <strong class="label-name">检查人员</strong>
+                    <span class="label-value" id="checkPeople"></span>
+                </div>
+            </div>
+            <div class="record-routes">
+                <div class="route-item">
+                    <div class="routeItem-header">
+                        <div>水库巡查路线</div>
+                    </div>
+                    <div class="routeItem-content">
+                        <!--<p>巡查路线一</p>-->
+                        <!--<div class="record-points">-->
+                            <!--<div class="record-point">-->
+                                <!--<p><span>1</span>珊溪水库巡查点位一</p>-->
+                                <!--<div class="recordPoint-status">-->
+                                    <!--<span>未巡查</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div id="startPatrol" class="btn-primary" onclick="submitPatrol()">上报</div>
+            </div>
+        </div>
+    </div>
+  </div>

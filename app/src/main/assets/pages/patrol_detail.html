@@ -1,0 +1,120 @@
+<div class="page bg-white" data-page="patrolDetail">
+    <div class='page-content' style="background: #f6f8fb;">
+        <div class="detail-title">
+            <div class="content-top">
+                <div class="area-head">
+                    <p><i onclick="goBack()"></i><span>正在巡查</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-content" style="background:#fff">
+            <div class="patrol-content">
+                <div class="patrol-overview">
+                    <div class="patrol-item active">
+                        <span>巡查点一</span>
+                        <i></i>
+                        <a class="active">已打卡</a>
+                    </div>
+                    <div class="patrol-item">
+                        <span>巡查点二</span>
+                        <i></i>
+                        <a>未打卡</a>
+                    </div>
+                    <div class="patrol-item">
+                        <span>巡查点三</span>
+                        <i></i>
+                        <a>未打卡</a>
+                    </div>
+                    <div class="patrol-item">
+                        <span>巡查点四</span>
+                        <i></i>
+                        <a>未打卡</a>
+                    </div>
+                    <div class="patrol-item">
+                        <span>巡查点五</span>
+                        <i></i>
+                        <a>未打卡</a>
+                    </div>
+                    <div class="patrol-item">
+                        <span>巡查点六</span>
+                        <i></i>
+                        <a>未打卡</a>
+                    </div>
+                    <div class="patrol-item"></div>
+                </div>
+            </div>
+            <div class="patrolPoint-detail">
+                <p>巡查点位一</p>
+                <div class="patrol-problem">
+                    <p><strong>巡查问题</strong></p>
+                    <div class="patrolProblem-list">
+                        <div class="patrolProblem-item">
+                            <p>1、是否有异常情况</p>
+                            <div class="jurdge-area">
+                                <span class="no-problem" onclick="haveAbnormal(false,this)">无</span>
+                                <span class="have-problem" onclick="haveAbnormal(true,this)">有</span>
+                            </div>
+                            <div class="problem-describe" style="display:none">
+                                <p>问题描述</p>
+                                <div class="describe-content">
+                                    <textarea rows="4" placeholder="请写下您遇到的问题"
+                                        style="border:none;border-bottom:.01rem solid #F3F3F3;"></textarea>
+                                    <div class="problem-funs">
+                                        <div class="func-item">
+                                            <p><span></span></p>
+                                            <p>上传图片</p>
+                                        </div>
+                                        <div class="func-item">
+                                            <p><span></span></p>
+                                            <p>上传视频</p>
+                                        </div>
+                                        <div class="func-item">
+                                            <p><span></span></p>
+                                            <p>上传语音</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="patrolProblem-item">
+                            <p>2、是否有违法乱点现象</p>
+                            <div class="jurdge-area">
+                                <span class="no-problem" onclick="haveAbnormal(false,this)">无</span>
+                                <span class="have-problem" onclick="haveAbnormal(true,this)">有</span>
+                            </div>
+                            <div class="problem-describe" style="display:none">
+                                <div class="describe-content">
+                                    <p>请选择违法类型</p>
+                                    <div class="illegal-type">
+                                        <select style="width:60%">
+                                            <option value="违法垂钓">违法垂钓</option>
+                                            <option value="违法游泳">违法游泳</option>
+                                        </select>
+                                        <span onclick="openRetainage()">添加暂扣单</span>
+                                    </div>
+                                    <div class="problem-funs">
+                                        <div class="func-item">
+                                            <p><span></span></p>
+                                            <p>上传图片</p>
+                                        </div>
+                                        <div class="func-item">
+                                            <p><span></span></p>
+                                            <p>上传视频</p>
+                                        </div>
+                                        <div class="func-item">
+                                            <p><span></span></p>
+                                            <p>上传语音</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-bottom">
+                            <div class="btn-primary" onclick="nextStep()">下一步</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
